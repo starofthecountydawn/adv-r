@@ -78,7 +78,7 @@ df$f <- fix_missing(df$e)
 
 This reduces the scope for errors, but doesn't eliminate them.  We've still made an error, because we've repeatedly applied our function to each column. To prevent that error from occuring we need to remove the copy-and-paste application of our function to each column. To do this, we need to combine, or compose, our function for correcting missing values with a function that does something to each column in a data frame, like `lapply()`.  
 
-`lapply()` takes three inputs: `x`, a list; `f`, a function; and ``...`, other arguments to pass to `f`. It applies the function to each element of the list and returns a new list. Since data frames are also lists, `lapply()` also works on data frames. `lapply(x, f, ...)` is equivalent to the following for loop:
+`lapply()` takes three inputs: `x`, a list; `f`, a function; and `...`, other arguments to pass to `f`. It applies the function to each element of the list and returns a new list. Since data frames are also lists, `lapply()` also works on data frames. `lapply(x, f, ...)` is equivalent to the following for loop:
 
 ```{r, eval = FALSE}
 out <- vector("list", length(x))
